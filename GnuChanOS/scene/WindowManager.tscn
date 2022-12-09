@@ -1,0 +1,281 @@
+[gd_scene load_steps=23 format=2]
+
+[ext_resource path="res://img/gnuchanOS_Window_Manager.png" type="Texture" id=1]
+[ext_resource path="res://font/FreeSans.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://script/WindowManager.gd" type="Script" id=3]
+
+[sub_resource type="StyleBoxTexture" id=1]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 1280, 1012 )
+
+[sub_resource type="DynamicFont" id=18]
+size = 20
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="DynamicFont" id=19]
+size = 20
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=13]
+
+[sub_resource type="StyleBoxEmpty" id=14]
+
+[sub_resource type="StyleBoxEmpty" id=15]
+
+[sub_resource type="StyleBoxEmpty" id=16]
+
+[sub_resource type="StyleBoxEmpty" id=17]
+
+[sub_resource type="DynamicFont" id=5]
+size = 21
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 18
+use_filter = true
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="DynamicFont" id=7]
+font_data = ExtResource( 2 )
+
+[node name="WindowManager" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Panel" type="Panel" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="system" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="system"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/separation = 0
+
+[node name="sep" type="Control" parent="system/VBoxContainer"]
+margin_right = 1280.0
+margin_bottom = 9.67
+rect_min_size = Vector2( 0, 9.67 )
+
+[node name="top" type="HBoxContainer" parent="system/VBoxContainer"]
+margin_top = 9.0
+margin_right = 1280.0
+margin_bottom = 46.0
+custom_constants/separation = 0
+
+[node name="sep" type="Control" parent="system/VBoxContainer/top"]
+margin_right = 9.734
+margin_bottom = 37.355
+rect_min_size = Vector2( 9.734, 37.355 )
+
+[node name="top1" type="Control" parent="system/VBoxContainer/top"]
+margin_left = 9.0
+margin_right = 54.769
+margin_bottom = 37.355
+rect_min_size = Vector2( 45.769, 37.355 )
+
+[node name="top2" type="Control" parent="system/VBoxContainer/top"]
+margin_left = 54.0
+margin_right = 217.348
+margin_bottom = 37.355
+rect_min_size = Vector2( 163.348, 37.355 )
+
+[node name="topX" type="HBoxContainer" parent="system/VBoxContainer/top/top2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="sep" type="Control" parent="system/VBoxContainer/top/top2/topX"]
+margin_right = 5.287
+margin_bottom = 37.0
+rect_min_size = Vector2( 5.287, 0 )
+
+[node name="Settings" type="Button" parent="system/VBoxContainer/top/top2/topX"]
+margin_left = 9.0
+margin_right = 81.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 18 )
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+text = "Settings"
+
+[node name="sep2" type="Control" parent="system/VBoxContainer/top/top2/topX"]
+margin_left = 85.0
+margin_right = 90.287
+margin_bottom = 37.0
+rect_min_size = Vector2( 5.287, 0 )
+
+[node name="Sound" type="Button" parent="system/VBoxContainer/top/top2/topX"]
+margin_left = 94.0
+margin_right = 151.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 19 )
+custom_styles/hover = SubResource( 13 )
+custom_styles/pressed = SubResource( 14 )
+custom_styles/focus = SubResource( 15 )
+custom_styles/disabled = SubResource( 16 )
+custom_styles/normal = SubResource( 17 )
+text = "Sound"
+
+[node name="sep3" type="Control" parent="system/VBoxContainer/top/top2/topX"]
+margin_left = 155.0
+margin_right = 160.287
+margin_bottom = 37.0
+rect_min_size = Vector2( 5.287, 0 )
+
+[node name="top3" type="Control" parent="system/VBoxContainer/top"]
+margin_left = 217.0
+margin_right = 535.234
+margin_bottom = 37.355
+rect_min_size = Vector2( 318.234, 37.355 )
+
+[node name="top4" type="Control" parent="system/VBoxContainer/top"]
+margin_left = 535.0
+margin_right = 744.044
+margin_bottom = 37.355
+rect_min_size = Vector2( 209.044, 37.355 )
+
+[node name="Label" type="Label" parent="system/VBoxContainer/top/top4"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 5 )
+text = "No Gnu/Linux No Life"
+align = 1
+valign = 1
+
+[node name="top5" type="Control" parent="system/VBoxContainer/top"]
+margin_left = 744.0
+margin_right = 1031.05
+margin_bottom = 37.355
+rect_min_size = Vector2( 287.046, 37.355 )
+
+[node name="top6" type="Control" parent="system/VBoxContainer/top"]
+margin_left = 1031.0
+margin_right = 1225.0
+margin_bottom = 37.355
+rect_min_size = Vector2( 194.004, 37.355 )
+
+[node name="date" type="Label" parent="system/VBoxContainer/top/top6"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 6 )
+text = "tes"
+align = 1
+valign = 1
+
+[node name="top7" type="Control" parent="system/VBoxContainer/top"]
+margin_left = 1225.0
+margin_right = 1270.77
+margin_bottom = 37.355
+rect_min_size = Vector2( 45.769, 37.355 )
+
+[node name="top3" type="HBoxContainer" parent="system/VBoxContainer"]
+margin_top = 46.0
+margin_right = 1280.0
+margin_bottom = 966.0
+custom_constants/separation = 0
+
+[node name="sep" type="Control" parent="system/VBoxContainer/top3"]
+margin_right = 18.657
+margin_bottom = 920.953
+rect_min_size = Vector2( 18.657, 920.953 )
+
+[node name="sep2" type="Control" parent="system/VBoxContainer/top3"]
+margin_left = 18.0
+margin_right = 319.399
+margin_bottom = 920.953
+rect_min_size = Vector2( 301.399, 920.953 )
+
+[node name="systemSp" type="Control" parent="system/VBoxContainer/top3/sep2"]
+margin_left = 6.0
+margin_top = 74.0
+margin_right = 294.0
+margin_bottom = 698.0
+
+[node name="TextEdit" type="TextEdit" parent="system/VBoxContainer/top3/sep2/systemSp"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_styles/read_only = SubResource( 2 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+readonly = true
+
+[node name="bottom" type="HBoxContainer" parent="system/VBoxContainer"]
+margin_top = 966.0
+margin_right = 1280.0
+margin_bottom = 1003.0
+custom_constants/separation = 0
+
+[node name="sep" type="Control" parent="system/VBoxContainer/bottom"]
+margin_right = 9.734
+margin_bottom = 37.355
+rect_min_size = Vector2( 9.734, 37.355 )
+
+[node name="top1" type="Control" parent="system/VBoxContainer/bottom"]
+margin_left = 9.0
+margin_right = 28.862
+margin_bottom = 37.355
+rect_min_size = Vector2( 19.862, 37.355 )
+
+[node name="top2" type="Control" parent="system/VBoxContainer/bottom"]
+margin_left = 28.0
+margin_right = 446.374
+margin_bottom = 37.355
+rect_min_size = Vector2( 418.374, 37.355 )
+
+[node name="top3" type="Control" parent="system/VBoxContainer/bottom"]
+margin_left = 446.0
+margin_right = 832.617
+margin_bottom = 37.355
+rect_min_size = Vector2( 386.617, 37.355 )
+
+[node name="bottomLabel" type="Label" parent="system/VBoxContainer/bottom/top3"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = SubResource( 7 )
+text = "test"
+align = 1
+valign = 1
+
+[node name="top4" type="Control" parent="system/VBoxContainer/bottom"]
+margin_left = 832.0
+margin_right = 1251.54
+margin_bottom = 37.355
+rect_min_size = Vector2( 419.536, 37.355 )
+
+[node name="top7" type="Control" parent="system/VBoxContainer/bottom"]
+margin_left = 1251.0
+margin_right = 1270.99
+margin_bottom = 37.355
+rect_min_size = Vector2( 19.989, 37.355 )
