@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://img/displayManager.png" type="Texture" id=1]
 [ext_resource path="res://font/FreeSans.ttf" type="DynamicFontData" id=2]
@@ -14,13 +14,67 @@ size = 20
 use_filter = true
 font_data = ExtResource( 2 )
 
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.133333, 0.00784314, 0.333333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.133333, 0.00784314, 0.333333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=7]
+bg_color = Color( 0.133333, 0.00784314, 0.333333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=8]
+bg_color = Color( 0.133333, 0.00784314, 0.333333, 1 )
+
+[sub_resource type="StyleBoxFlat" id=14]
+bg_color = Color( 0.0627451, 0.00392157, 0.14902, 1 )
+
 [sub_resource type="DynamicFont" id=3]
 size = 20
 use_filter = true
 font_data = ExtResource( 2 )
 
+[sub_resource type="StyleBoxFlat" id=9]
+bg_color = Color( 0.211765, 0.0117647, 0.486275, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=10]
+bg_color = Color( 0.211765, 0.0117647, 0.486275, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=11]
+bg_color = Color( 0.211765, 0.0117647, 0.486275, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=12]
+bg_color = Color( 0.211765, 0.0117647, 0.486275, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id=13]
+bg_color = Color( 0.211765, 0.0117647, 0.486275, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="DynamicFont" id=15]
+size = 60
+font_data = ExtResource( 2 )
+
 [sub_resource type="DynamicFont" id=4]
-size = 63
+size = 15
 font_data = ExtResource( 2 )
 
 [node name="DisplayManager" type="Control"]
@@ -35,70 +89,98 @@ custom_styles/panel = SubResource( 1 )
 
 [node name="dm" type="Control" parent="."]
 margin_left = 216.0
-margin_top = 223.0
+margin_top = 232.0
 margin_right = 544.0
-margin_bottom = 396.0
+margin_bottom = 321.0
 
 [node name="VBoxContainer" type="VBoxContainer" parent="dm"]
 margin_right = 40.0
 margin_bottom = 40.0
 
 [node name="userName" type="HBoxContainer" parent="dm/VBoxContainer"]
-margin_right = 314.0
-margin_bottom = 24.0
+margin_right = 324.0
+margin_bottom = 22.0
 
 [node name="usernameSTR" type="Label" parent="dm/VBoxContainer/userName"]
-margin_top = 1.0
 margin_right = 115.0
-margin_bottom = 23.0
+margin_bottom = 22.0
 custom_fonts/font = SubResource( 2 )
 text = "User Name : "
 
 [node name="userNameInput" type="LineEdit" parent="dm/VBoxContainer/userName"]
 margin_left = 119.0
-margin_right = 280.233
-margin_bottom = 24.0
-rect_min_size = Vector2( 161.233, 0 )
+margin_right = 324.203
+margin_bottom = 22.0
+rect_min_size = Vector2( 205.203, 0 )
+custom_styles/focus = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
 
 [node name="password" type="HBoxContainer" parent="dm/VBoxContainer"]
-margin_top = 28.0
-margin_right = 314.0
-margin_bottom = 52.0
+margin_top = 26.0
+margin_right = 324.0
+margin_bottom = 48.0
 
 [node name="passwordSTR" type="Label" parent="dm/VBoxContainer/password"]
-margin_top = 1.0
 margin_right = 149.0
-margin_bottom = 23.0
+margin_bottom = 22.0
 custom_fonts/font = SubResource( 2 )
 text = "User Password : "
 
 [node name="passwordInput" type="LineEdit" parent="dm/VBoxContainer/password"]
 margin_left = 153.0
-margin_right = 314.233
-margin_bottom = 24.0
-rect_min_size = Vector2( 161.233, 0 )
+margin_right = 323.998
+margin_bottom = 22.0
+rect_min_size = Vector2( 170.998, 0 )
+custom_styles/focus = SubResource( 7 )
+custom_styles/normal = SubResource( 8 )
+secret = true
+
+[node name="Panel" type="Panel" parent="dm/VBoxContainer"]
+margin_top = 52.0
+margin_right = 324.0
+margin_bottom = 65.215
+rect_min_size = Vector2( 0, 13.215 )
+custom_styles/panel = SubResource( 14 )
 
 [node name="buttons" type="Control" parent="dm/VBoxContainer"]
-margin_top = 56.0
-margin_right = 314.0
-margin_bottom = 56.0
+margin_top = 69.0
+margin_right = 324.0
+margin_bottom = 69.0
 
 [node name="login" type="Button" parent="dm/VBoxContainer/buttons"]
 margin_right = 12.0
 margin_bottom = 20.0
+rect_min_size = Vector2( 62.053, 28.324 )
 custom_fonts/font = SubResource( 3 )
+custom_styles/hover = SubResource( 9 )
+custom_styles/pressed = SubResource( 10 )
+custom_styles/focus = SubResource( 11 )
+custom_styles/disabled = SubResource( 12 )
+custom_styles/normal = SubResource( 13 )
 text = "Login"
 
 [node name="welcome" type="Label" parent="."]
-margin_left = 48.0
-margin_top = 792.0
-margin_right = 1211.0
-margin_bottom = 862.0
+margin_left = 56.0
+margin_top = 672.0
+margin_right = 1219.0
+margin_bottom = 815.0
+custom_fonts/font = SubResource( 15 )
+text = "Welcome To GnuChanOS
+ System Universe"
+align = 1
+valign = 1
+
+[node name="warning" type="Label" parent="."]
+margin_left = 176.0
+margin_top = 352.0
+margin_right = 584.0
+margin_bottom = 384.0
 custom_fonts/font = SubResource( 4 )
-text = "welcome to GnuChanOS System Universe"
+align = 1
+valign = 1
 
 [node name="Logo" type="Sprite" parent="."]
-position = Vector2( 920, 376 )
+position = Vector2( 952, 352 )
 scale = Vector2( 1.50741, 1.50741 )
 texture = ExtResource( 3 )
 
