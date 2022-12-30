@@ -1,0 +1,321 @@
+
+
+#####################################
+""" """ | ''' ''' | #
+
+
+int float
+10 | 10.50
+
+
+str
+"uwu" | 'uwu' | "U'W'U"
+
+
+len(Degisken) # index sayısını verir
+[0:6:1] # başlangıç : Bitiş : atlama sayısı
+
+boolean - if elif else
+if > elif > else
+
+True False
+== != | <> | >= <= | in not in |
+and | or
+
+
+# "r" = read
+with open('pythonNotes.txt', 'r') as f:
+    data = f.read()
+
+# "w" write
+with open('pythonNotes.txt', 'w') as f:
+    f.write
+
+#####################################
+
+
+
+#####################################
+oyun_tuple = ("haylayf", "kantır sıtrayk")
+#                0               1     
+oyun_tuple[0]
+#####################################
+
+
+
+
+#####################################
+
+# Liste
+
+
+oyun_listesi = ["half life", "left 4 dead"]
+#                   0               1
+
+oyun_listesi.append("Half Life 3") 
+oyun_listesi.remove("Duke Nukem forever") 
+
+oyun_listesi.count("half life") 
+oyun_listesi.reverse() 
+oyun_listesi.sort()   
+
+oyun_listesi.clear() 
+
+#####################################
+
+
+
+
+
+#####################################
+
+# set
+
+setX = {1,2,3,4,5}
+setX.add("test")
+setX.remove(1)
+setX.pop()
+setX.update({11,111,1111,222})
+
+copy = setX.copy()
+copy.clear()
+#####################################
+
+
+
+
+#####################################
+
+# dictionary
+
+oyunPuanları = {
+        "half life 3":100,
+        "left 4 dead 3":95,
+        "portal 3":98,
+        "gta 6":98.5,
+    
+    
+        "alt oyunlar":{
+            "postal 32":62,
+            "metin 3":32,
+            "var kıraft 3":"yüz puan"
+    
+        }
+    }
+    
+oyunPuanları["dead island"] = 1000
+oyunPuanları["alt oyunlar"]["metin 3"] = 100
+oyunPuanları.pop("half life 3") 
+oyunPuanları.popitem()
+yedek = oyunPuanları.copy()
+
+oyunPuanları.clear()
+#####################################
+
+
+
+
+#####################################
+For Loop
+# örnek 1
+for i in range(0,101):
+    print(i)
+
+liste = [1,2,3,4,5]
+for i in liste:
+    print(i)
+
+
+
+# örnek 2
+While Loop
+
+number = 0
+while True:
+    if number <= 60:
+        print(number)
+        number += 0.05
+    else:
+        break
+
+
+# örnek 3
+number = 0
+while number <= 60:
+    number += 0.05
+    print(number)
+
+
+
+# örnek 4
+sayi = None # boş
+while not sayi:
+    number = input("Sayı Gir: ")
+    try:                             
+    # eğer sayı girilir ise
+        sayi = int(number)
+    except ValueError:              
+    # eğer sayı girilmez ise
+        print("sadece sayı gir!")
+
+print(f"Girilen Sayı: {sayi}")
+
+#####################################
+
+
+
+
+
+#####################################
+fonksiyonlar
+
+def test(a,b):
+    return a + b
+print(test(10,30))
+
+
+
+
+#####################################
+
+
+
+
+#####################################
+Class
+
+class main:
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+    
+    def live(self):
+        self.age += 1
+        print(f"1 şuanda {self.age} yaşında")
+
+
+ali = main(name="Ali", age=18)
+ali.live()
+
+#####################################
+
+
+
+
+#####################################
+
+# boş örnek
+
+import PySimpleGUI as sg
+defaul = [
+
+]
+window = sg.Window('Window Title', defaul, finalize=True)
+while True:
+    event, values = window.read()
+    if event == sg.WIN_CLOSED or event == 'Cancel': 
+        break
+window.close()
+
+#####################################
+
+
+# fonksiyonlar ############################
+
+sg.Text(
+
+)
+
+sg.Text(
+    text="text"
+    font="Sans, 20"
+    justification="right" - left\center
+    key="inputText"
+)
+
+sg.Button()
+
+sg.Input(
+    key="inputText"
+    focus=True
+    disabled=True yada readonly=True
+    )
+
+sg.Multiline(
+    autoscroll=True
+    key="inputText"
+    )
+
+pad=(0,0) aradaki boşluk
+
+gerekli tab ve check
+
+# işleyiş
+
+
+justification --> genişliğe göre belirlenir
+
+expand_x ve expand_y 
+yanındaki objeye göre boyutunu fuller
+genişlemek ve büyümek gibi
+
+
+values["inputText"] --> değiştiricek değer
+    ---> input ve multiline
+window["TextWindo"] --> değişicek değer
+    ---> text,multiline,
+event --> button tıklama işlemleri
+
+
+
+# tıkladığımız button ismi event listede var ise 
+# aktifTab ismi ile eşitlendi
+if event in ["tab1","tab2"]:
+    aktifTab = event
+    window["aktifTabWin"].update(aktifTab)
+
+# aktif tab ismini sözlük olarak atadık
+aktif_Tab_MultiLine = { 
+        "tab1": "multitext1", 
+        "tab2": "multitext2", 
+}
+
+multiLine = aktif_Tab_MultiLine[aktifTab]
+
+
+
+
+#####################################
+
+
+
+
+
+
+
+
+#####################################
+
+pygame Müzik ---> from pygame import mixer
+
+
+
+
+mixer.init() <--- burası olması şart
+
+mixer.music.load(defaulMusic)
+mixer.music.play()
+mixer.music.stop()
+
+
+
+
+
+
+
+
+
+
+
+
+#####################################
