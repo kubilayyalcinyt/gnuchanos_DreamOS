@@ -1,6 +1,5 @@
 
 
-#####################################
 """ """ | ''' ''' | #
 
 
@@ -34,20 +33,13 @@ with open('pythonNotes.txt', 'w') as f:
 #####################################
 
 
-
-#####################################
 oyun_tuple = ("haylayf", "kantır sıtrayk")
 #                0               1     
 oyun_tuple[0]
 #####################################
 
 
-
-
-#####################################
-
 # Liste
-
 
 oyun_listesi = ["half life", "left 4 dead"]
 #                   0               1
@@ -64,11 +56,6 @@ oyun_listesi.clear()
 #####################################
 
 
-
-
-
-#####################################
-
 # set
 
 setX = {1,2,3,4,5}
@@ -81,10 +68,6 @@ copy = setX.copy()
 copy.clear()
 #####################################
 
-
-
-
-#####################################
 
 # dictionary
 
@@ -113,9 +96,6 @@ oyunPuanları.clear()
 #####################################
 
 
-
-
-#####################################
 For Loop
 # örnek 1
 for i in range(0,101):
@@ -146,7 +126,6 @@ while number <= 60:
     print(number)
 
 
-
 # örnek 4
 sayi = None # boş
 while not sayi:
@@ -163,25 +142,15 @@ print(f"Girilen Sayı: {sayi}")
 #####################################
 
 
-
-
-
-#####################################
 fonksiyonlar
 
 def test(a,b):
     return a + b
 print(test(10,30))
 
-
-
-
 #####################################
 
 
-
-
-#####################################
 Class
 
 class main:
@@ -202,9 +171,17 @@ ali.live()
 
 
 
-#####################################
 
+
+
+
+# python kütüphaneleri --------------
+
+1-) PySimpleGUI
 # boş örnek
+
+
+
 
 import PySimpleGUI as sg
 defaul = [
@@ -216,15 +193,14 @@ while True:
     if event == sg.WIN_CLOSED or event == 'Cancel': 
         break
 window.close()
+-------------------------------------------
 
-#####################################
 
 
-# fonksiyonlar ############################
 
-sg.Text(
 
-)
+sg elemenleri
+-------------------------------------------
 
 sg.Text(
     text="text"
@@ -246,6 +222,10 @@ sg.Multiline(
     key="inputText"
     )
 
+-------------------------------------------
+
+sg element için alt özellikler
+-------------------------------------------
 pad=(0,0) aradaki boşluk
 
 gerekli tab ve check
@@ -260,6 +240,9 @@ yanındaki objeye göre boyutunu fuller
 genişlemek ve büyümek gibi
 
 
+
+key="" ile veri alma ve veri değiştirme
+-------------------------------------------
 values["inputText"] --> değiştiricek değer
     ---> input ve multiline
 window["TextWindo"] --> değişicek değer
@@ -281,25 +264,13 @@ aktif_Tab_MultiLine = {
 }
 
 multiLine = aktif_Tab_MultiLine[aktifTab]
+-------------------------------------------
 
 
 
 
-#####################################
-
-
-
-
-
-
-
-
-#####################################
-
+2-) pygame
 pygame Müzik ---> from pygame import mixer
-
-
-
 
 mixer.init() <--- burası olması şart
 
@@ -307,15 +278,14 @@ mixer.music.load(defaulMusic)
 mixer.music.play()
 mixer.music.stop()
 
+for event in pygame.event.get():
+    if event.type == pygame.QUIT:
+                pygame.quit()
 
-
-
-
-
-
-
-
-
-
-
-#####################################
+        # tuşa basılı tutma ve bırakma
+        if event.type == pygame.KEYDOWN:
+            if event.key == pygame.K_w:
+                mixer.music.play()
+        elif event.type == pygame.KEYUP:
+            #if event.key == pygame.K_w:
+                mixer.music.stop()

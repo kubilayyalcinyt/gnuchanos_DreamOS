@@ -8,7 +8,7 @@ def WarningWindow():
     
     """
     defaul = [
-        [sg.Multiline(multiLineText, font="Sans, 20", disabled=True, size=(60,8), no_scrollbar=True)]
+        [sg.Multiline(multiLineText, font="Sans, 20", disabled=True, size=(80,8), no_scrollbar=True)]
     ]
     window = sg.Window('Window Title', defaul)
     while True:
