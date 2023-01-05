@@ -171,36 +171,41 @@ ali.live()
 
 
 
-
-
-
-
 # python kütüphaneleri --------------
 
-1-) PySimpleGUI
-# boş örnek
+
+1-) keyboard
+
+if keyboard.is_pressed("a"):
+        print("a")
 
 
+-------------------------------------------
 
 
 import PySimpleGUI as sg
 defaul = [
-
+    [sg.Text("Test")]
 ]
-window = sg.Window('Window Title', defaul, finalize=True)
+window = sg.Window('Window Title', defaul, finalize=True, return_keyboard_events=True)
 while True:
     event, values = window.read()
     if event == sg.WIN_CLOSED or event == 'Cancel': 
         break
 window.close()
--------------------------------------------
+
+
+
+return_keyboard_events=True # keyboard event
+if event == 'a':
+    sg.popup("test")
+
 
 
 
 
 
 sg elemenleri
--------------------------------------------
 
 sg.Text(
     text="text"
@@ -222,7 +227,6 @@ sg.Multiline(
     key="inputText"
     )
 
--------------------------------------------
 
 sg element için alt özellikler
 -------------------------------------------
@@ -242,7 +246,7 @@ genişlemek ve büyümek gibi
 
 
 key="" ile veri alma ve veri değiştirme
--------------------------------------------
+
 values["inputText"] --> değiştiricek değer
     ---> input ve multiline
 window["TextWindo"] --> değişicek değer
@@ -264,9 +268,9 @@ aktif_Tab_MultiLine = {
 }
 
 multiLine = aktif_Tab_MultiLine[aktifTab]
+
+
 -------------------------------------------
-
-
 
 
 2-) pygame
@@ -289,3 +293,14 @@ for event in pygame.event.get():
         elif event.type == pygame.KEYUP:
             #if event.key == pygame.K_w:
                 mixer.music.stop()
+
+
+
+
+
+
+
+
+
+
+

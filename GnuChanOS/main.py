@@ -3,6 +3,8 @@ import datetime, os
 from programs import *
 
 
+
+
 sg.LOOK_AND_FEEL_TABLE["gnuchan"] = {
                                         'BACKGROUND': '#160229',
                                         'TEXT': '#9d4edd',
@@ -100,7 +102,7 @@ def main():
 
 
 
-    Window = sg.Window("GnuChan Default", mainPanel, finalize=True)
+    Window = sg.Window("GnuChan Default", mainPanel, finalize=True, return_keyboard_events=True)
     Window['InputTxt'].bind("<Return>", "_Enter")
 
 
@@ -108,6 +110,7 @@ def main():
         event, values = Window.read(timeout=60)
         if event == sg.WIN_CLOSED or event == 'Exit':
             break
+
 
         # time and date
         year = datetime.datetime.today().year
@@ -123,8 +126,6 @@ def main():
 
         # test input
         test = " ArchKubi: " + values["InputTxt"] + "\n"
-
-
 
         if event == "InputTxt" + "_Enter":
             Window["InputTxt"].update("")

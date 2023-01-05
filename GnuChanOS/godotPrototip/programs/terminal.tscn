@@ -1,0 +1,90 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://FreeSans.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://programs/terminal.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.160784, 0.00392157, 0.360784, 1 )
+border_width_left = 8
+border_width_top = 22
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color( 0.635294, 0.478431, 0.803922, 1 )
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+expand_margin_top = 22.0
+shadow_size = 4
+
+[sub_resource type="DynamicFont" id=7]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.160784, 0.027451, 0.411765, 1 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 53
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 20
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+bg_color = Color( 0.0901961, 0.0156863, 0.231373, 1 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.0901961, 0.0156863, 0.231373, 1 )
+
+[node name="terminalWindow" type="WindowDialog"]
+margin_left = 384.0
+margin_top = 120.0
+margin_right = 1320.0
+margin_bottom = 792.0
+custom_styles/panel = SubResource( 1 )
+window_title = "GnuChanOS Terminal"
+script = ExtResource( 2 )
+
+[node name="pnl" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 8.0
+margin_right = -8.0
+margin_bottom = -8.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="pnl"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+
+[node name="termSTR" type="TextEdit" parent="pnl/VBoxContainer"]
+margin_right = 920.0
+margin_bottom = 600.0
+rect_min_size = Vector2( 0, 600 )
+custom_colors/font_color_readonly = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 7 )
+custom_styles/read_only = SubResource( 5 )
+readonly = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="pnl/VBoxContainer"]
+margin_top = 604.0
+margin_right = 920.0
+margin_bottom = 663.0
+
+[node name="inputLabel" type="Label" parent="pnl/VBoxContainer/HBoxContainer"]
+margin_right = 212.0
+margin_bottom = 59.0
+custom_fonts/font = SubResource( 2 )
+text = " Input >:| "
+
+[node name="input" type="LineEdit" parent="pnl/VBoxContainer/HBoxContainer"]
+margin_left = 216.0
+margin_right = 916.0
+margin_bottom = 59.0
+rect_min_size = Vector2( 700, 0 )
+custom_fonts/font = SubResource( 6 )
+custom_styles/focus = SubResource( 3 )
+custom_styles/normal = SubResource( 4 )
+
+[connection signal="text_entered" from="pnl/VBoxContainer/HBoxContainer/input" to="." method="_on_input_text_entered"]
